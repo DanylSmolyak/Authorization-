@@ -1,0 +1,13 @@
+<div class="container" onclick="onclick">
+  <form [formGroup]="form" (submit)="submit()">
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="center">
+      <h2 class="text-white">Log in</h2>
+      <input formControlName="name" type="text" placeholder="Name" required/>
+      <input formControlName="password" type="password" placeholder="password" required/>
+      <button class="w-100" type="submit">Submit</button>
+      <h2>&nbsp;</h2>
+    </div>
+    </form>
+</div>

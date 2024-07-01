@@ -1,0 +1,23 @@
+<div class="container" onclick="onclick">
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="top"></div>
+      <div class="bottom"></div>
+      <div class="center">
+        <h2 class="text-white ">Please Sign In</h2>
+        <input id="name" formControlName="name" class="form-control" placeholder="Name" required>
+        <input id="password" formControlName="password" type="password" class="form-control" placeholder="Password" required>
+        <div class="mb-3">
+          <div class="strength">
+            <div class="section" [ngClass]="getPasswordStrengthClass(1)"></div>
+            <div class="section" [ngClass]="getPasswordStrengthClass(2)"></div>
+            <div class="section" [ngClass]="getPasswordStrengthClass(3)"></div>
+          </div>
+          <div class="strength-label text-danger">{{ getPasswordStrengthText() }}</div>
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+        <button class="w-100 btn" type="submit"><span class="submit-button-text">Submit</span></button>
+        <h2>&nbsp;</h2>
+      </div>
+    </form>
+  </div>
